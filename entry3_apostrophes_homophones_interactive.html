@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Functional Skills English – Entry 3 | Apostrophes & Homophones (Interactive)</title>
+  <style>
+    :root {
+      --bg: #f8fafc; /* slate-50 */
+      --panel: #ffffff;
+      --ink: #0f172a; /* slate-900 */
+      --muted: #475569; /* slate-600 */
+      --accent: #2563eb; /* blue-600 */
+      --accent-2: #10b981; /* emerald-500 */
+      --warn: #ef4444; /* red-500 */
+    }
+    body {font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; background: var(--bg); color: var(--ink); margin:0;}
+    header {background: linear-gradient(90deg, var(--accent), #7c3aed); color: white; padding: 24px;}
+    header h1 {margin:0; font-size: 1.75rem;}
+    header p {margin:8px 0 0; opacity: 0.9;}
+    main {max-width: 960px; margin: 24px auto; padding: 0 16px 48px;}
+    .card {background: var(--panel); border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); padding: 20px; margin: 16px 0;}
+    h2 {margin: 0 0 8px;}
+    .explain {color: var(--muted);}
+    .grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;}
+    .q {margin: 12px 0;}
+    .q label {display:block; margin-bottom: 6px; font-weight: 600;}
+    .q input[type="text"], .q select, .q textarea {width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px;}
+    .q .options {display:flex; gap:10px; flex-wrap: wrap;}
+    .tag {display:inline-block; padding: 4px 8px; border-radius: 999px; background:#eef2ff; color:#3730a3; font-size: 0.85rem;}
+    .actions {display:flex; gap:10px; flex-wrap: wrap; margin-top:12px;}
+    button {padding: 10px 14px; border: none; border-radius: 8px; background: var(--accent); color: white; cursor: pointer;}
+    button.secondary {background:#0ea5e9;} /* sky */
+    button.ghost {background:transparent; border:1px dashed #94a3b8; color:#0f172a;}
+    .result {margin-top: 8px; font-weight: 600;}
+    .correct {color: var(--accent-2);} .incorrect {color: var(--warn);} .neutral {color: var(--muted);} 
+    .hidden {display:none;}
+    footer {text-align:center; color: var(--muted); padding: 24px 0 48px;}
+    .split {display:grid; grid-template-columns: 1fr 1fr; gap: 24px;}
+    @media (max-width: 840px){ .split {grid-template-columns: 1fr;} }
+    .kb {background:#f1f5f9; border:1px solid #e2e8f0; border-radius:12px; padding:12px;}
+    .kb h3 {margin:0 0 8px;}
+    .small {font-size: 0.9rem;}
+    .hr {border-top: 1px dashed #e2e8f0; margin: 16px 0;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Functional Skills English – Entry 3</h1>
+    <p>Apostrophes & Homophones (Interactive Worksheet)</p>
+  </header>
+  <main>
+    <div class="card split">
+      <div>
+        <h2>Part 1: Apostrophes</h2>
+        <p class="explain"><strong>Use apostrophes for:</strong> <span class="tag">Contractions</span> (missing letters: <em>don’t = do not</em>) and <span class="tag">Possession</span> (belongs to: <em>Sarah’s book</em>).<br/>
+        <strong>Examples:</strong> <em>It’s</em> raining (It is); The <em>dog’s</em> tail (tail of the dog). Avoid using apostrophes for plurals.</p>
+      </div>
+      <div class="kb">
+        <h3>Teacher Tips</h3>
+        <ul class="small">
+          <li>Highlight <em>its</em> (possessive, no apostrophe) vs <em>it’s</em> (it is).</li>
+          <li>For names ending in <em>s</em>, many styles accept <em>James’s</em>. Entry 3: be consistent.</li>
+          <li>Encourage reading aloud to check contractions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" id="t1">
+      <h3>Task 1: Add the Missing Apostrophes</h3>
+      <p class="explain">Rewrite each sentence correctly.</p>
+      <div class="q"><label>1) Its raining outside.</label><input type="text"/></div>
+      <div class="q"><label>2) I cant find my keys.</label><input type="text"/></div>
+      <div class="q"><label>3) The dogs tail is wagging.</label><input type="text"/></div>
+      <div class="q"><label>4) Lets go to the park.</label><input type="text"/></div>
+      <div class="q"><label>5) Whos coming to the party?</label><input type="text"/></div>
+      <div class="actions">
+        <button onclick="markT1()">Check answers</button>
+        <button class="ghost" onclick="toggleHint('h1')">Show hints</button>
+        <button class="secondary" onclick="showAnswers('t1')">Reveal model answers</button>
+      </div>
+      <div id="h1" class="hidden small">
+        <div class="hr"></div>
+        <p>Think: Is it a contraction (<em>it is, cannot, let us, who is</em>) or possession (<em>dog’s tail</em>)?</p>
+      </div>
+      <div class="result neutral" id="r1">—</div>
+    </div>
+
+    <div class="card" id="t2">
+      <h3>Task 2: Contractions</h3>
+      <p class="explain">Match the words to their contractions. Choose the correct option for each.</p>
+      <div class="grid">
+        <div class="q"><label>do not</label>
+          <select>
+            <option value="">— Select —</option>
+            <option>it’s</option><option>don’t</option><option>they’re</option><option>you’ll</option><option>we’ve</option>
+          </select>
+        </div>
+        <div class="q"><label>they are</label>
+          <select>
+            <option value="">— Select —</option>
+            <option>it’s</option><option>don’t</option><option>they’re</option><option>you’ll</option><option>we’ve</option>
+          </select>
+        </div>
+        <div class="q"><label>you will</label>
+          <select>
+            <option value="">— Select —</option>
+            <option>it’s</option><option>don’t</option><option>they’re</option><option>you’ll</option><option>we’ve</option>
+          </select>
+        </div>
+        <div class="q"><label>we have</label>
+          <select>
+            <option value="">— Select —</option>
+            <option>it’s</option><option>don’t</option><option>they’re</option><option>you’ll</option><option>we’ve</option>
+          </select>
+        </div>
+        <div class="q"><label>it is</label>
+          <select>
+            <option value="">— Select —</option>
+            <option>it’s</option><option>don’t</option><option>they’re</option><option>you’ll</option><option>we’ve</option>
+          </select>
+        </div>
+      </div>
+      <div class="actions">
+        <button onclick="markT2()">Check answers</button>
+        <button class="ghost" onclick="toggleHint('h2')">Show hints</button>
+        <button class="secondary" onclick="showAnswers('t2')">Reveal model answers</button>
+      </div>
+      <div id="h2" class="hidden small"><div class="hr"></div>
+        <p>Common contractions: do not → don’t; they are → they’re; you will → you’ll; we have → we’ve; it is → it’s.</p>
+      </div>
+      <div class="result neutral" id="r2">—</div>
+    </div>
+
+    <div class="card" id="t3">
+      <h3>Task 3: Possession</h3>
+      <p class="explain">Add an apostrophe to show possession.</p>
+      <div class="q"><label>1) The shoes of the girl →</label><input type="text" placeholder="_____ shoes"/></div>
+      <div class="q"><label>2) The toys of the children →</label><input type="text" placeholder="_____ toys"/></div>
+      <div class="q"><label>3) The car of James →</label><input type="text" placeholder="_____ car"/></div>
+      <div class="actions">
+        <button onclick="markT3()">Check answers</button>
+        <button class="ghost" onclick="toggleHint('h3')">Show hints</button>
+        <button class="secondary" onclick="showAnswers('t3')">Reveal model answers</button>
+      </div>
+      <div id="h3" class="hidden small"><div class="hr"></div>
+        <p>For plural nouns already ending in <em>s</em> (e.g., children is irregular), place the apostrophe after the noun appropriately.</p>
+      </div>
+      <div class="result neutral" id="r3">—</div>
+    </div>
+
+    <div class="card split">
+      <div>
+        <h2>Part 2: Homophones</h2>
+        <p class="explain">Homophones sound the same but have different spellings and meanings. <strong>Examples:</strong> <em>there / their / they’re</em>, <em>your / you’re</em>, <em>its / it’s</em>.</p>
+      </div>
+      <div class="kb">
+        <h3>Spot the Difference</h3>
+        <ul class="small">
+          <li><strong>there</strong> (place), <strong>their</strong> (belonging), <strong>they’re</strong> (they are).</li>
+          <li><strong>your</strong> (belonging), <strong>you’re</strong> (you are).</li>
+          <li><strong>its</strong> (belonging), <strong>it’s</strong> (it is).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" id="t4">
+      <h3>Task 4: Choose the Correct Word</h3>
+      <p class="explain">Select the correct homophone for each sentence.</p>
+      <div class="q"><label>1) I left my bag over …</label>
+        <select>
+          <option value="">— Select —</option>
+          <option>there</option><option>their</option><option>they’re</option>
+        </select>
+      </div>
+      <div class="q"><label>2) … going to love this movie.</label>
+        <select>
+          <option value="">— Select —</option>
+          <option>Your</option><option>You’re</option>
+        </select>
+      </div>
+      <div class="q"><label>3) The dog wagged … tail.</label>
+        <select>
+          <option value="">— Select —</option>
+          <option>its</option><option>it’s</option>
+        </select>
+      </div>
+      <div class="q"><label>4) I need to buy … apples.</label>
+        <select>
+          <option value="">— Select —</option>
+          <option>two</option><option>too</option><option>to</option>
+        </select>
+      </div>
+      <div class="q"><label>5) We went to the beach and saw the big …</label>
+        <select>
+          <option value="">— Select —</option>
+          <option>see</option><option>sea</option>
+        </select>
+      </div>
+      <div class="actions">
+        <button onclick="markT4()">Check answers</button>
+        <button class="ghost" onclick="toggleHint('h4')">Show hints</button>
+        <button class="secondary" onclick="showAnswers('t4')">Reveal model answers</button>
+      </div>
+      <div id="h4" class="hidden small"><div class="hr"></div>
+        <p>Think about meaning: place vs possession; <em>you are</em> vs <em>your</em>; number vs too much vs direction.</p>
+      </div>
+      <div class="result neutral" id="r4">—</div>
+    </div>
+
+    <div class="card" id="t5">
+      <h3>Task 5: Fill in the Blanks</h3>
+      <p class="explain">Use the correct homophone.</p>
+      <div class="q"><label>1) I can’t wait to see _____ new house.</label><input type="text" placeholder="there / their / they’re"/></div>
+      <div class="q"><label>2) Please take a seat over _____.</label><input type="text" placeholder="there / their / they’re"/></div>
+      <div class="q"><label>3) _____ going to the shop later.</label><input type="text" placeholder="there / their / they’re"/></div>
+      <div class="actions">
+        <button onclick="markT5()">Check answers</button>
+        <button class="ghost" onclick="toggleHint('h5')">Show hints</button>
+        <button class="secondary" onclick="showAnswers('t5')">Reveal model answers</button>
+      </div>
+      <div id="h5" class="hidden small"><div class="hr"></div>
+        <p>Check each: belonging (<em>their</em>), place (<em>there</em>), contraction of <em>they are</em> (<em>they’re</em>).</p>
+      </div>
+      <div class="result neutral" id="r5">—</div>
+    </div>
+
+    <div class="card" id="challenge">
+      <h3>Challenge</h3>
+      <p class="explain">Write three sentences: one with possession, one with a contraction, and one with a homophone.</p>
+      <div class="q"><label>Possession</label><textarea rows="2"></textarea></div>
+      <div class="q"><label>Contraction</label><textarea rows="2"></textarea></div>
+      <div class="q"><label>Homophone</label><textarea rows="2"></textarea></div>
+      <div class="actions">
+        <button onclick="selfAssess()">Self-assess</button>
+        <button class="ghost" onclick="exportResponses()">Download my answers (.txt)</button>
+      </div>
+      <div class="result neutral" id="rc">—</div>
+    </div>
+
+    <div class="card kb">
+      <h3>Answer Key</h3>
+      <ol>
+        <li><strong>Task 1</strong>: It’s raining outside. I can’t find my keys. The dog’s tail is wagging. Let’s go to the park. Who’s coming to the party?</li>
+        <li><strong>Task 2</strong>: don’t; they’re; you’ll; we’ve; it’s</li>
+        <li><strong>Task 3</strong>: girl’s shoes; children’s toys; James’s car</li>
+        <li><strong>Task 4</strong>: there; You’re; its; two; sea</li>
+        <li><strong>Task 5</strong>: their; there; they’re</li>
+      </ol>
+    </div>
+
+    <footer>
+      <p>© Outstanding FE College – Functional Skills English (Entry 3)</p>
+      <p class="small">Created for online learning. Works offline once loaded.</p>
+    </footer>
+  </main>
+
+  <script>
+    function toggleHint(id){
+      const el = document.getElementById(id);
+      el.classList.toggle('hidden');
+    }
+    function showAnswers(sectionId){
+      const result = document.querySelector('#' + sectionId + ' .result');
+      const keyMap = {
+        't1': ['It's raining outside.','I can't find my keys.','The dog's tail is wagging.','Let's go to the park.','Who's coming to the party?'],
+        't2': ['don't','they're','you'll','we've','it's'],
+        't3': ["girl's shoes","children's toys","James's car"],
+        't4': ['there','You're','its','two','sea'],
+        't5': ['their','there','they're']
+      };
+      result.innerHTML = '<span class="correct">Model answers: </span>' + keyMap[sectionId].join(' | ');
+    }
+    function norm(s){return (s||'').trim().replace(/\s+/g,' ').toLowerCase();}
+
+    function markT1(){
+      const inputs = document.querySelectorAll('#t1 input');
+      const answers = ["it's raining outside.","i can't find my keys.","the dog's tail is wagging.","let's go to the park.","who's coming to the party?"];
+      let score=0; inputs.forEach((el,i)=>{ if(norm(el.value)===answers[i]) score++;});
+      document.getElementById('r1').innerHTML = score===5 ? '<span class="correct">All correct! 5/5</span>' : `<span class="incorrect">${score}/5 correct. Keep going!</span>`;
+    }
+    function markT2(){
+      const selects = document.querySelectorAll('#t2 select');
+      const answers = ["don't","they're","you'll","we've","it's"];
+      let score=0; selects.forEach((el,i)=>{ if(el.value===answers[i]) score++;});
+      document.getElementById('r2').innerHTML = score===5 ? '<span class="correct">All correct! 5/5</span>' : `<span class="incorrect">${score}/5 correct. Try adjusting the choices.</span>`;
+    }
+    function markT3(){
+      const inputs = document.querySelectorAll('#t3 input');
+      const answers = ["girl's shoes","children's toys","james's car"];
+      let score=0; inputs.forEach((el,i)=>{ if(norm(el.value)===answers[i]) score++;});
+      document.getElementById('r3').innerHTML = score===3 ? '<span class="correct">Great! 3/3</span>' : `<span class="incorrect">${score}/3 correct. Check apostrophe placement.</span>`;
+    }
+    function markT4(){
+      const selects = document.querySelectorAll('#t4 select');
+      const answers = ['there','You're','its','two','sea'];
+      let score=0; selects.forEach((el,i)=>{ if(el.value===answers[i]) score++;});
+      document.getElementById('r4').innerHTML = score===5 ? '<span class="correct">Nailed it! 5/5</span>' : `<span class="incorrect">${score}/5 correct. Reread each sentence.</span>`;
+    }
+    function markT5(){
+      const inputs = document.querySelectorAll('#t5 input');
+      const answers = ["their","there","they're"];
+      let score=0; inputs.forEach((el,i)=>{ if(norm(el.value)===answers[i]) score++;});
+      document.getElementById('r5').innerHTML = score===3 ? '<span class="correct">Perfect! 3/3</span>' : `<span class="incorrect">${score}/3 correct. Think about meaning.</span>`;
+    }
+
+    function selfAssess(){
+      const areas = document.querySelectorAll('#challenge textarea');
+      let msg = 'Check: Does your first sentence show possession (apostrophe + noun)? Does the second use a contraction correctly? Does the third use a homophone with the right meaning?';
+      document.getElementById('rc').innerHTML = '<span class="neutral">' + msg + '</span>';
+    }
+
+    function exportResponses(){
+      const t1 = Array.from(document.querySelectorAll('#t1 input')).map(el=>el.value).join('
+');
+      const t2 = Array.from(document.querySelectorAll('#t2 select')).map(el=>el.value).join(', ');
+      const t3 = Array.from(document.querySelectorAll('#t3 input')).map(el=>el.value).join('
+');
+      const t4 = Array.from(document.querySelectorAll('#t4 select')).map(el=>el.value).join(', ');
+      const t5 = Array.from(document.querySelectorAll('#t5 input')).map(el=>el.value).join('
+');
+      const challenge = Array.from(document.querySelectorAll('#challenge textarea')).map(el=>el.value).join('
+
+');
+      const text = `Functional Skills English – Entry 3 (Interactive)
+
+Task 1:
+${t1}
+
+Task 2:
+${t2}
+
+Task 3:
+${t3}
+
+Task 4:
+${t4}
+
+Task 5:
+${t5}
+
+Challenge:
+${challenge}
+`;
+      const blob = new Blob([text], {type: 'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'entry3_apostrophes_homophones_answers.txt'; a.click();
+      setTimeout(()=>URL.revokeObjectURL(url), 2000);
+    }
+  </script>
+</body>
+</html>
